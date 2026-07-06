@@ -17,7 +17,7 @@ public:
         dist[0][0] = 1;
         q.push({0, 0});
 
-        int dr[] = {-1,-1,-1,0,0,1,1,1};
+        int dr[] = {-1,-1,-1,0,0,1,1,1};        //there striver has explored 4 directions ,but here we need to explore diagonals as well
         int dc[] = {-1,0,1,-1,1,-1,0,1};
 
         while (!q.empty()) {
