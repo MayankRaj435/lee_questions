@@ -1,18 +1,27 @@
 class Solution {
 public:
     string build(string s) {
-        string res = "";
+        stack<char> st;
 
         for (int i = 0; i < s.length(); i++) {
             if (s[i] != '#') {
-                res.push_back(s[i]);
+                st.push(s[i]);
             }
-            else if (!res.empty()) {
-                res.pop_back();
+            else if (!st.empty()) {
+                st.pop();
             }
         }
 
-        return res;
+        string ans = "";
+
+        while (!st.empty()) {
+            ans += st.top();
+            st.pop();
+        }
+
+        reverse(ans.begin(), ans.end());
+
+        return ans;
     }
 
     bool backspaceCompare(string s, string t) {
